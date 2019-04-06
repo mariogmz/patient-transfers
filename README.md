@@ -1,24 +1,12 @@
-# README
+# Patient Transfers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Context
+This prototype implements an emergency summary to transfer injured skiers from their medical outposts to hospitals. This summary deviates from standard forms, being closer to a narrated summary written by the medical staff.
 
-Things you may want to cover:
+## Entity Relationship
+![alt text](http://oi66.tinypic.com/wvbmz7.jpg)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Stack
+1. Rails 5.3.3 (Ruby 2.6.1)
+2. SQLite
+3. Bootstrap (3?) TBD
