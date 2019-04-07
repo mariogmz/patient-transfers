@@ -16,4 +16,8 @@ class Symptom < ApplicationRecord
   belongs_to :admission
 
   validates :description, presence: true
+
+  def to_s
+    description
+  end
 end

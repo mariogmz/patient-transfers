@@ -14,4 +14,8 @@
 class Allergy < ApplicationRecord
   has_and_belongs_to_many :patients
   validates :description, presence: true
+
+  def to_s
+    description
+  end
 end

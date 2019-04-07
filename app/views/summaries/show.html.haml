@@ -1,0 +1,55 @@
+%h1 Emergency Transfer Summary
+
+%section.transfer-form
+%table
+  %thead
+    %tr
+      %th{ colspan: 5 } Emergency Transfer Summary (Form 34L-D)
+  %tbody
+    %tr
+      %td{ colspan: 5 }
+        %strong Transferring Facility
+    %tr
+      %td
+        %p Name
+        %p= @patient.facility.name
+      %td{ colspan: 4 }
+    %tr
+      %td{ colspan: 5 }
+        %strong Patient Information
+    %tr
+      %td
+        %p First Name
+        %p= @patient.first_name
+      %td
+        %p Middle Name
+        %p= @patient.middle_name
+      %td
+        %p Last Name
+        %p= @patient.last_name
+      %td
+        %p Medical Record (MR)
+        %p= @patient.mr
+      %td
+    %tr
+      %td{ colspan: 5 }
+        %p
+          %strong Summary
+        %p
+          = t("summary.diagnostic", { patient_age: @patient.age,
+                                      patient_gender: @patient.gender,
+                                      facility_name: @patient.facility.name,
+                                      patient_admission_date: @patient.admission.date,
+                                      patient_admission_time: @patient.admission.time,
+                                      patient_admission_diagnoses: build_sentences(@patient.admission.diagnoses, true),
+                                      patient_admission_symptoms: build_sentences(@patient.admission.symptoms),
+                                      patient_admission_observations: build_sentences(@patient.admission.observations).capitalize })
+        %p
+          = t("summary.medications", { patient_allergies: build_sentences(@patient.allergies),
+                                       patient_cronic_conditions: build_sentences(@patient.cronic_conditions),
+                                       patient_allergies: build_sentences(@patient.allergies),
+                                       patient_medications: build_sentences(@patient.medications) })
+        %p
+          = t("summary.procedures", { patient_diagnostic_procedures: build_sentences(@patient.diagnostic_procedures),
+                                      patient_diagnoses: build_sentences(@patient.diagnoses),
+                                      patient_treatments: build_sentences(@patient.treatments) })

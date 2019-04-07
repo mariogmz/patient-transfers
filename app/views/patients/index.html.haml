@@ -16,7 +16,7 @@
         %td= patient.first_name
         %td= patient.last_name
         %td= patient.facility.name
-        %td= link_to 'Transfer Summary', patient
+        %td= link_to 'Transfer Summary', summary_path(patient)
         -# %td= link_to 'Edit', edit_patient_path(patient)
         -# %td= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' }
 

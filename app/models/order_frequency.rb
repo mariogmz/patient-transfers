@@ -14,11 +14,13 @@
 
 class OrderFrequency < ApplicationRecord
   has_many :medication_orders
-  enum unit: { hour: "hrs" }
+  enum unit: [:hr]
 
   validates :value, presence: true
 
   def to_s
-    "q#{value}#{self.class.units[unit]}"
+    "q#{value}#{unit}"
   end
+
+  private
 end

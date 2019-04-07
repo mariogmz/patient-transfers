@@ -34,6 +34,7 @@ gem "jbuilder", "~> 2.5"
 # gem "capistrano-rails", group: :development
 gem "haml"
 gem "haml-rails"
+gem "indefinite_article"
 
 gem "bootsnap", ">= 1.1.0", require: false
 

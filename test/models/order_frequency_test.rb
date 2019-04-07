@@ -29,7 +29,7 @@ class OrderFrequencyTest < ActiveSupport::TestCase
 
   test "#to_s" do
     subject.value = "6"
-    subject.unit = :hour
-    assert_equal("q6hrs", subject.to_s)
+    subject.unit = 0
+    assert_equal("q6hr", subject.to_s)
   end
 end

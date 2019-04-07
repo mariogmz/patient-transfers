@@ -17,4 +17,8 @@ class Treatment < ApplicationRecord
   belongs_to :patient
 
   validates :description, presence: true
+
+  def to_s
+    "#{description} to #{necessity}"
+  end
 end

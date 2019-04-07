@@ -28,4 +28,10 @@ class DiagnosisTest < ActiveSupport::TestCase
     should validate_presence_of(:diagnosable_type)
     should validate_presence_of(:type)
   end
+
+  test "#described_code" do
+    subject.code_system = "S82"
+    subject.code = "101"
+    assert_equal("(S82.101)", subject.described_code)
+  end
 end

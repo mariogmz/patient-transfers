@@ -15,21 +15,11 @@
 #  type             :string           default("Diagnosis")
 #
 
-class Diagnosis < ApplicationRecord
-  belongs_to :diagnosable, polymorphic: true
 
-  validates :code_system,
-            :description,
-            :diagnosable_type,
-            :type,
-            presence: true
+require "test_helper"
 
-  def described_code
-    return "(#{code_system})" if code.nil?
-    "(#{code_system}.#{code})"
-  end
-
-  def to_s
-    "#{description} #{described_code}"
-  end
+class PatientDiagnosisTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

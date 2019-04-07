@@ -24,4 +24,8 @@ class MedicationOrder < ApplicationRecord
   enum route: [:PO, :IM, :SC]
 
   validates :name, :dosage, presence: true
+
+  def to_s
+    "#{name.capitalize} #{dosage.to_i}#{unit} #{route} #{frequency} to #{necessity}"
+  end
 end

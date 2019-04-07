@@ -16,4 +16,16 @@ class DiagnosticProcedure < ApplicationRecord
   belongs_to :patient
 
   validates :description, :moment, presence: true
+
+  def date
+    moment.strftime("%B %-d, %Y")
+  end
+
+  def time
+    moment.strftime("%-I:%M %P")
+  end
+
+  def to_s
+    "#{description} on #{date}, at #{time}"
+  end
 end

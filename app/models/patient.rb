@@ -21,7 +21,7 @@ class Patient < ApplicationRecord
   has_one :admission
   has_and_belongs_to_many :allergies
   has_many :cronic_conditions, as: :diagnosable
-  has_many :diagnoses, as: :diagnosable
+  has_many :diagnoses, as: :diagnosable, class_name: "PatientDiagnosis"
   has_many :diagnostic_procedures
   has_many :medications, class_name: "MedicationOrder"
   has_many :treatments

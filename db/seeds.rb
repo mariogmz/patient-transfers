@@ -11,7 +11,7 @@ if Rails.env.development?
       last_name: "Schudel",
       mr: "30997",
       dob: 43.years.ago,
-      gender: 1,
+      gender: 0,
       facility: blue_alps_ski_camp
     )
 
@@ -60,14 +60,14 @@ if Rails.env.development?
 
     ###########
     # Order Frequency
-    four_hours = OrderFrequency.create!(value: "4", unit: :hour)
-    six_hours = OrderFrequency.create!(value: "6", unit: :hour)
+    four_hours = OrderFrequency.create!(value: "4", unit: 0)
+    six_hours = OrderFrequency.create!(value: "6", unit: 0)
 
     ###########
     # Medication Orders
     patient.medications.create!([
-      { name: "Acetamiphen", dosage: 500, route: 1, frequency: four_hours, necessity: "relieve pain" },
-      { name: "Naproxen", dosage: 500, route: 1, frequency: six_hours, necessity: "relieve swelling" }
+      { name: "Acetamiphen", dosage: 500, unit: 0, route: 0, frequency: four_hours, necessity: "relieve pain" },
+      { name: "Naproxen", dosage: 500, unit: 0, route: 0, frequency: six_hours, necessity: "relieve swelling" }
     ])
 
     ###########

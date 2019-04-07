@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+  summary:
+    diagnostic: This %{patient_age} years old %{patient_gender} was admitted to %{facility_name} on %{patient_admission_date} at %{patient_admission_time} due to %{patient_admission_diagnoses}. The observed symptoms on admission were %{patient_admission_symptoms}. %{patient_admission_observations}.
+    medications: Upon asking about known allergies, the patient disclosed %{patient_allergies}. Upon asking about chronic conditions, the patient disclosed %{patient_cronic_conditions}. The patient was administered with %{patient_medications}.
+    procedures: The staff performed %{patient_diagnostic_procedures}, revealing %{patient_diagnoses}. Our team proceeded to %{patient_treatments}.
