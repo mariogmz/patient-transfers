@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: diagnoses
+#
+#  id               :integer          not null, primary key
+#  code_system      :string
+#  code             :string
+#  description      :text
+#  diagnosable_type :string
+#  diagnosable_id   :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  type             :string
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# one:
+#   code_system: MyString
+#   code: MyString
+#   description: MyText
+#   type: CronicCondition
+#
+# two:
+#   code_system: MyString
+#   code: MyString
+#   description: MyText
+#   type: CronicCondition

@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: order_frequencies
+#
+#  id         :integer          not null, primary key
+#  value      :string
+#  unit       :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value: MyString
+  unit: 1
+
+two:
+  value: MyString
+  unit: 1

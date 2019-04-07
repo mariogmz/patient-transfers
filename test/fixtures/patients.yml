@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: patients
+#
+#  id          :integer          not null, primary key
+#  first_name  :string
+#  middle_name :string
+#  last_name   :string
+#  mr          :string
+#  dob         :datetime
+#  gender      :integer
+#  facility_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  mr: MyString
+  dob: 2019-04-05 23:16:36
+  gender: 1
+  facility: one
+
+two:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  mr: MyString
+  dob: 2019-04-05 23:16:36
+  gender: 1
+  facility: two
