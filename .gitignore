@@ -48,3 +48,6 @@ dump.rdb
 
 /config/credentials/development.key
 coverage
+
+db/*.sqlite3
+

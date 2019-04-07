@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: admissions
@@ -7,6 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  patient_id :integer
+#  moment     :datetime
 #
 
 class Admission < ApplicationRecord
@@ -15,5 +17,13 @@ class Admission < ApplicationRecord
   has_many :observations
   has_many :symptoms
 
-  alias_attribute :moment, :updated_at
+  validates :moment, presence: true
+
+  def date
+    moment.strftime("%B %-d, %Y")
+  end
+
+  def time
+    moment.strftime("%-I:%M %P")
+  end
 end

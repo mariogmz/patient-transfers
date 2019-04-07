@@ -12,14 +12,13 @@
 #  diagnosable_id   :integer
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
-#  type             :string
+#  type             :string           default("Diagnosis")
 #
 
 class Diagnosis < ApplicationRecord
   belongs_to :diagnosable, polymorphic: true
 
   validates :code_system,
-            :code,
             :description,
             :diagnosable_type,
             :type,

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: patients
@@ -25,7 +26,8 @@ class PatientTest < ActiveSupport::TestCase
     should have_many(:cronic_conditions)
     should have_many(:diagnoses)
     should have_many(:diagnostic_procedures)
-    should have_many(:medication_orders)
+    should have_many(:medications)
+    should have_many(:treatments)
   end
 
   context "validations" do
@@ -36,5 +38,10 @@ class PatientTest < ActiveSupport::TestCase
 
   context "attributes" do
     should define_enum_for(:gender)
+  end
+
+  test "#age" do
+    subject.dob = 18.years.ago
+    assert_equal(18, subject.age)
   end
 end

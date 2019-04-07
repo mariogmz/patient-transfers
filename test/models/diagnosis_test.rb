@@ -12,7 +12,7 @@
 #  diagnosable_id   :integer
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
-#  type             :string
+#  type             :string           default("Diagnosis")
 #
 
 require "test_helper"
@@ -24,7 +24,6 @@ class DiagnosisTest < ActiveSupport::TestCase
 
   context "validations" do
     should validate_presence_of(:code_system)
-    should validate_presence_of(:code)
     should validate_presence_of(:description)
     should validate_presence_of(:diagnosable_type)
     should validate_presence_of(:type)

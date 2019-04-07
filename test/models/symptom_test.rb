@@ -15,7 +15,11 @@
 require "test_helper"
 
 class SymptomTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  context "associations" do
+    should belong_to(:admission)
+  end
+
+  context "validations" do
+    should validate_presence_of(:description)
+  end
 end

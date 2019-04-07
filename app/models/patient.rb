@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: patients
@@ -19,12 +20,17 @@ class Patient < ApplicationRecord
   belongs_to :facility
   has_one :admission
   has_and_belongs_to_many :allergies
-  has_many :cronic_conditions, as: :diagnosable, class_name: "Diagnosis"
-  has_many :diagnoses, as: :diagnosable, class_name: "Diagnosis"
+  has_many :cronic_conditions, as: :diagnosable
+  has_many :diagnoses, as: :diagnosable
   has_many :diagnostic_procedures
-  has_many :medication_orders
+  has_many :medications, class_name: "MedicationOrder"
+  has_many :treatments
 
   enum gender: [:male, :female, :other]
 
   validates :first_name, :last_name, :dob, presence: true
+
+  def age
+    DateTime.now.year - dob.year
+  end
 end

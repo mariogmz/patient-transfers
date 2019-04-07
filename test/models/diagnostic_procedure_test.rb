@@ -9,8 +9,8 @@
 #  patient_id  :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  moment      :datetime
 #
-
 
 require "test_helper"
 
@@ -19,7 +19,8 @@ class DiagnosticProcedureTest < ActiveSupport::TestCase
     should belong_to(:patient)
   end
 
-  context "attributes" do
-    should respond_to?(:moment)
+  context "validations" do
+    should validate_presence_of(:description)
+    should validate_presence_of(:moment)
   end
 end

@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_043543) do
+ActiveRecord::Schema.define(version: 2019_04_07_174033) do
 
   create_table "admissions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "patient_id"
+    t.datetime "moment"
     t.index ["patient_id"], name: "index_admissions_on_patient_id"
   end
 
@@ -39,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_04_07_043543) do
     t.integer "diagnosable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "type"
+    t.string "type", default: "Diagnosis"
     t.index ["diagnosable_type", "diagnosable_id"], name: "index_diagnoses_on_diagnosable_type_and_diagnosable_id"
   end
 
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 2019_04_07_043543) do
     t.integer "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "moment"
     t.index ["patient_id"], name: "index_diagnostic_procedures_on_patient_id"
   end
 
@@ -63,11 +65,11 @@ ActiveRecord::Schema.define(version: 2019_04_07_043543) do
     t.decimal "dosage"
     t.integer "route"
     t.text "necessity"
-    t.integer "frequency_id"
+    t.integer "order_frequency_id"
     t.integer "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["frequency_id"], name: "index_medication_orders_on_frequency_id"
+    t.index ["order_frequency_id"], name: "index_medication_orders_on_order_frequency_id"
     t.index ["patient_id"], name: "index_medication_orders_on_patient_id"
   end
 

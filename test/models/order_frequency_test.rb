@@ -26,4 +26,10 @@ class OrderFrequencyTest < ActiveSupport::TestCase
   context "attributes" do
     should define_enum_for(:unit)
   end
+
+  test "#to_s" do
+    subject.value = "6"
+    subject.unit = :hour
+    assert_equal("q6hrs", subject.to_s)
+  end
 end

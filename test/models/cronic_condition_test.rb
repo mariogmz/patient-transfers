@@ -12,9 +12,8 @@
 #  diagnosable_id   :integer
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
-#  type             :string
+#  type             :string           default("Diagnosis")
 #
-
 
 require "test_helper"
 

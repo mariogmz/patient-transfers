@@ -13,8 +13,8 @@
 
 one:
   value: MyString
-  unit: 1
+  unit: hour
 
 two:
   value: MyString
-  unit: 1
+  unit: hour
