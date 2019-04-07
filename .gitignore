@@ -47,3 +47,4 @@ dump.rdb
 /config/credentials/production.key
 
 /config/credentials/development.key
+coverage
