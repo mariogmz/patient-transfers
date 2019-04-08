@@ -34,4 +34,11 @@ class DiagnosisTest < ActiveSupport::TestCase
     subject.code = "101"
     assert_equal("(S82.101)", subject.described_code)
   end
+
+  test "#to_s" do
+    subject.description = "Test"
+    subject.code_system = "S19"
+    subject.code = "101"
+    assert_equal("Test (S19.101)", subject.to_s)
+  end
 end
