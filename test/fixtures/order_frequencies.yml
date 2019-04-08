@@ -18,3 +18,11 @@ one:
 two:
   value: MyString
   unit: hour
+
+4_hours:
+  value: 4
+  unit: hour
+
+6_hours:
+  value: 6
+  unit: hour
