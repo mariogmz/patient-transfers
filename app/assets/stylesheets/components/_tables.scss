@@ -1,0 +1,21 @@
+table.table {
+
+  thead {
+    background-color: $bay-of-many;
+    color: $bonjour;
+  }
+
+  tr.row-label {
+    background-color: $nepal;
+    color: $bonjour;
+  }
+
+  p {
+    margin: 5px 0;
+
+    &.cell-label {
+      font-weight: 500;
+    }
+  }
+
+}

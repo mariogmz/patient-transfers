@@ -1,14 +1,13 @@
 %h1 Patients
 
-%table
+%table.table
   %thead
     %tr
-      %th Patient ID
+      %th #
       %th First Name
       %th Last Name
       %th Facility
       %th
-
   %tbody
     - @patients.each do |patient|
       %tr
@@ -16,10 +15,10 @@
         %td= patient.first_name
         %td= patient.last_name
         %td= patient.facility.name
-        %td= link_to 'Transfer Summary', summary_path(patient)
+        %td= link_to 'Transfer Summary', summary_path(patient), role: "button", class: "btn btn-default"
         -# %td= link_to 'Edit', edit_patient_path(patient)
         -# %td= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
+= will_paginate @patients
 
 -# = link_to 'New Patient', new_patient_path

@@ -6,7 +6,7 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all.preload(:facility)
+    @patients = Patient.preload(:facility).paginate(page: params[:page], per_page: 15)
   end
 
   # GET /patients/1

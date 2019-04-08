@@ -17,6 +17,7 @@ Just as any Rails app:
 
 ```bash
 $ bundle install
+$ bundle exec rake db:migrate
 $ rails server
 ```
 
