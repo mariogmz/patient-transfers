@@ -3,7 +3,12 @@
 require "test_helper"
 
 class SummariesControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @patient = patients(:thomas)
+  end
+
+  test "should show summary" do
+    get patient_url(@patient)
+    assert_response :success
+  end
 end

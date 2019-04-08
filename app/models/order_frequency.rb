@@ -21,6 +21,4 @@ class OrderFrequency < ApplicationRecord
   def to_s
     "q#{value}#{unit}"
   end
-
-  private
 end
