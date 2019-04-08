@@ -23,4 +23,20 @@ class DiagnosticProcedureTest < ActiveSupport::TestCase
     should validate_presence_of(:description)
     should validate_presence_of(:moment)
   end
+
+  test "#date" do
+    subject.moment = DateTime.new(2019, 4, 5)
+    assert_equal("April 5, 2019", subject.date)
+  end
+
+  test "#time" do
+    subject.moment = DateTime.new(2019, 4, 5, 14, 30, 0)
+    assert_equal("2:30 pm", subject.time)
+  end
+
+  test "#to_s" do
+    subject.description = "Tested"
+    subject.moment = DateTime.new(2019, 4, 5, 14, 30, 0)
+    assert_equal("Tested on April 5, 2019, at 2:30 pm", subject.to_s)
+  end
 end

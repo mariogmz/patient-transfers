@@ -23,4 +23,10 @@ class TreatmentTest < ActiveSupport::TestCase
   context "validations" do
     should validate_presence_of(:description)
   end
+
+  test "#to_s" do
+    subject.description = "description"
+    subject.necessity = "test"
+    assert_equal("description to test", subject.to_s)
+  end
 end

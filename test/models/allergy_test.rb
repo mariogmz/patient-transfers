@@ -21,4 +21,9 @@ class AllergyTest < ActiveSupport::TestCase
   context "validations" do
     should validate_presence_of(:description)
   end
+
+  test "#to_s" do
+    subject.description = "description"
+    assert_equal("description", subject.to_s)
+  end
 end
