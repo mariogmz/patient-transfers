@@ -10,3 +10,14 @@ This prototype implements an emergency summary to transfer injured skiers from t
 1. Rails 5.3.3 (Ruby 2.6.1)
 2. SQLite
 3. Bootstrap (3?) TBD
+
+## Development
+
+Just as any Rails app:
+
+```bash
+$ bundle install
+$ rails server
+```
+
+Go to `localhost:3000` and that's it!
